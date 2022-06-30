@@ -11,6 +11,10 @@ CREATE TABLE IF NOT EXISTS `loandb`.`loan_calculation` (
   `payment_frequency` VARCHAR(255) NULL DEFAULT NULL,
   `total_interest` DOUBLE NULL DEFAULT NULL,
   `uuid` VARCHAR(255) NULL DEFAULT NULL,
+  `created_at` TIMESTAMP NULL DEFAULT NULL,
+  `updated_at` TIMESTAMP NULL DEFAULT NULL,
+
+
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4

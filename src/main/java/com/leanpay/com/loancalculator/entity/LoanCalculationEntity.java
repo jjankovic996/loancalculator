@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.time.Instant;
 
 @Entity
 @Getter
@@ -46,4 +47,11 @@ public class LoanCalculationEntity {
 
     @Column(name = "total_interest")
     private Double totalInterest;
+
+    @Column(name = "created_at")
+    private Instant createdAt;
+
+    @Column(name = "updated_at")
+    private Instant updatedAt;
+
 }

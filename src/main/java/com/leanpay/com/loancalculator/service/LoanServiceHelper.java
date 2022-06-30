@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.EnumUtils;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
 import java.util.UUID;
 
 @Service
@@ -98,6 +99,10 @@ public class LoanServiceHelper {
         entity.setPaymentFrequency(PaymentFrequencyEnum.valueOf(request.getPaymentFrequency()));
         entity.setMonthlyPayment(payment);
         entity.setTotalInterest(totalInterest);
+
+        Instant now = Instant.now();
+        entity.setCreatedAt(now);
+        entity.setUpdatedAt(now);
 
         return entity;
     }
