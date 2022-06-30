@@ -62,18 +62,18 @@ public class LoanServiceHelperTest {
   }
 
   @Test
-  public void getTotalNumberOfMonths() {
+  public void getTotalNumberOfMonthsTest() {
     LoanCalculatorRequest request = DataCreator.createLoanCalculatorRequest(null,null, 10, null);
 
-    double months = loanServiceHelper.getTotalNumberOfMonths(PaymentFrequencyEnum.MONTHLY, request);
-    double monthsFromYears = loanServiceHelper.getTotalNumberOfMonths(PaymentFrequencyEnum.ANNUALLY, request);
+    double months = loanServiceHelper.getTotalNumberOfMonths(PaymentFrequencyEnum.MONTHLY.name(), request);
+    double monthsFromYears = loanServiceHelper.getTotalNumberOfMonths(PaymentFrequencyEnum.ANNUALLY.name(), request);
 
     assertEquals(10, months);
     assertEquals(120, monthsFromYears);
   }
 
   @Test
-  public void createLoanCalculation(){
+  public void createLoanCalculationTest(){
     LoanCalculatorRequest request =
             DataCreator.createLoanCalculatorRequest(1000d, 5, 10, "MONTHLY");
 
@@ -88,14 +88,14 @@ public class LoanServiceHelperTest {
   }
 
   @Test
-  public void calculateTotalInterest() {
+  public void calculateTotalInterestTest() {
     double totalInterest = loanServiceHelper.calculateTotalInterest(1000, 123, 10);
     assertEquals(230.0, totalInterest);
   }
 
 
   @Test
-  public void calculatePayment() {
+  public void calculatePaymentTest() {
     LoanCalculatorRequest request =
             DataCreator.createLoanCalculatorRequest(1000d, 5, 10, "MONTHLY");
 

@@ -28,8 +28,7 @@ public class LoanServiceImpl implements  LoanService {
         }
 
         double numberOfMonths =
-            serviceHelper.getTotalNumberOfMonths(
-                PaymentFrequencyEnum.valueOf(request.getPaymentFrequency()), request);
+            serviceHelper.getTotalNumberOfMonths(request.getPaymentFrequency(), request);
         double payment = serviceHelper.calculatePayment(request, numberOfMonths);
         double totalInterest =
             serviceHelper.calculateTotalInterest(request.getLoanAmount(), payment, numberOfMonths);

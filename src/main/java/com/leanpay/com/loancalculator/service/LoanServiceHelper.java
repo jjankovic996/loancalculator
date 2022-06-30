@@ -74,8 +74,10 @@ public class LoanServiceHelper {
         return  (request.getLoanAmount() * interestRatePerMonth * i ) / (i - 1) ;
     }
 
-    public double getTotalNumberOfMonths(PaymentFrequencyEnum paymentFrequency, LoanCalculatorRequest request){
-        return switch (paymentFrequency) {
+    public double getTotalNumberOfMonths(String paymentFrequency, LoanCalculatorRequest request){
+
+        PaymentFrequencyEnum paymentFrequencyEnum = PaymentFrequencyEnum.valueOf(paymentFrequency);
+        return switch (paymentFrequencyEnum) {
             case   MONTHLY -> request.getNumberOfPayments();
             case   ANNUALLY -> request.getNumberOfPayments() * 12;
         };
