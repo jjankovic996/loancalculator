@@ -2,7 +2,6 @@ package com.leanpay.com.loancalculator.service;
 
 import com.leanpay.com.loancalculator.dto.LoanCalculationResponse;
 import com.leanpay.com.loancalculator.dto.LoanCalculatorRequest;
-import com.leanpay.com.loancalculator.enums.PaymentFrequencyEnum;
 import com.leanpay.com.loancalculator.dto.ResponseWrapper;
 import com.leanpay.com.loancalculator.entity.LoanCalculationEntity;
 import com.leanpay.com.loancalculator.repository.LoanCalculationRepository;
