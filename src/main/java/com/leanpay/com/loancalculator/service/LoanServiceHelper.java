@@ -17,15 +17,6 @@ public class LoanServiceHelper {
     public ResponseWrapper validateRequest(LoanCalculatorRequest request) {
         ResponseWrapper responseWrapper = new ResponseWrapper();
 
-        if (!EnumUtils.isValidEnum(PaymentFrequencyEnum.class, request.getPaymentFrequency())) {
-            log.info("Payment frequency is not valid. Please choose years or months.");
-
-            responseWrapper.setSuccessful(Boolean.FALSE);
-            responseWrapper.setErrorMessage("Payment frequency is not valid. Please choose years or months.");
-
-            return responseWrapper;
-        }
-
         if(request.getLoanAmount() == null){
             log.info("Please enter loan amount.");
 
@@ -52,6 +43,26 @@ public class LoanServiceHelper {
 
             return responseWrapper;
         }
+
+
+        if(request.getPaymentFrequency() == null) {
+            log.info("Please enter payment frequency.");
+
+            responseWrapper.setSuccessful(Boolean.FALSE);
+            responseWrapper.setErrorMessage("Please enter payment frequency.");
+
+            return responseWrapper;
+        }
+
+        if (!EnumUtils.isValidEnum(PaymentFrequencyEnum.class, request.getPaymentFrequency())) {
+            log.info("Payment frequency is not valid. Please choose years or months.");
+
+            responseWrapper.setSuccessful(Boolean.FALSE);
+            responseWrapper.setErrorMessage("Payment frequency is not valid. Please choose years or months.");
+
+            return responseWrapper;
+        }
+
 
         responseWrapper.setSuccessful(Boolean.TRUE);
         return responseWrapper;

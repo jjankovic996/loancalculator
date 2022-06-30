@@ -1,10 +1,9 @@
 package com.leanpay.com.loancalculator.dto;
 
-import lombok.Builder;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@Builder
 public class LoanCalculatorRequest {
     private Double loanAmount;
     private Integer interestRate;
