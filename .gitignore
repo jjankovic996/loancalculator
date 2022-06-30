@@ -1,0 +1,16 @@
+.gradle/*
+.idea/*
+build/*
+out/*
+insurio.iml
+/.gradle/
+/.idea/
+/build/
+/.project
+/.classpath
+/.settings/org.eclipse.buildship.core.prefs
+/.settings/
+/bin/
+/logs/
+/output/
+/temp/
