@@ -12,3 +12,4 @@ out/*
 /logs/
 /output/
 /temp/
+/target/classes/com/leanpay/com/loancalculator/handler/LoanExceptionHandler.class
