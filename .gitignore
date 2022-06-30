@@ -3,12 +3,11 @@
 build/*
 out/*
 insurio.iml
-/.gradle/
+/.mvn/wrapper/maven-wrapper.jar
 /.idea/
 /build/
 /.project
 /.classpath
-/.settings/org.eclipse.buildship.core.prefs
 /.settings/
 /bin/
 /logs/
